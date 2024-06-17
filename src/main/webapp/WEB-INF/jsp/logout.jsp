@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>どこつぶ</title>
+<title>くりったー</title>
 </head>
 </head>
 <body>
-<h1>どこつぶログアウト</h1>
+<h1>くりったーログアウト</h1>
 <p>ログアウトしました</p>
 <a href="index.jsp">トップへ</a>
 </body>

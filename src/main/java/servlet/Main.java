@@ -34,17 +34,17 @@ public class Main extends HttpServlet {
     // セッションスコープからユーザー情報を取得
     HttpSession session = request.getSession();
     User loginUser = (User) session.getAttribute("loginUser");
-    
     if (loginUser == null) { // ログインしていない場合
       // リダイレクト
-      response.sendRedirect("/docoTsubu/");
+      response.sendRedirect("index.jsp");
     } else { // ログイン済みの場合
       // フォワード
-      RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+      RequestDispatcher dispatcher =
+          request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
       dispatcher.forward(request, response);
     }
   }
-  
+
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // リクエストパラメータの取得
     request.setCharacterEncoding("UTF-8");
@@ -67,10 +67,13 @@ public class Main extends HttpServlet {
 
       // アプリケーションスコープにつぶやきリストを保存
       application.setAttribute("mutterList", mutterList);
+    } else {
+      //エラーメッセージをリクエストスコープに保存
+      request.setAttribute("errorMsg", "つぶやきが入力されていません");
     }
 
     // メイン画面にフォワード
-    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
     dispatcher.forward(request, response);
   }
 }
