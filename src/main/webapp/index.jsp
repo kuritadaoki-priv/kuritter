@@ -7,7 +7,7 @@
 <title>kuritter</title>
 </head>
 <body>
-<h1>kuritterへようこそ</h1>
+<h1>くりったーへようこそ</h1>
 <form action="Login" method="post">
 ユーザー名：<input type="text" name="name"><br>
 パスワード：<input type="password" name="pass"><br>
