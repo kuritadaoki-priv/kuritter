@@ -31,6 +31,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <% } %>
 <% for(Mutter mutter : mutterList){%>
   <p><%=mutter.getUserName()%>：<%=mutter.getText()%></p>
+  <p>投稿日時 : <%= mutter.getDate() %></p>
 <% } %>
 </body>
 </html>
